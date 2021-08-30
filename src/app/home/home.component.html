@@ -1,0 +1,7 @@
+<ngb-alert [dismissible]="false" #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''"><ngb-progressbar type="success" [value]="25"></ngb-progressbar>
+    {{ successMessage }}
+</ngb-alert>
+
+<p>
+  <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+</p>
