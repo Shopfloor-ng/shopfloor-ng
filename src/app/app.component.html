@@ -1,19 +1,39 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-  <span class="navbar-brand">Shopfloor NG</span>
-  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+  <span class="navbar-brand"><a routerLink="/" class="nav-link" tabindex="0" role="button">
+    Shopfloor NG
+  </a></span>
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" ngbDropdown>
-        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
+        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarstepsdropdown" role="button">
+          Steps
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarstepsdropdown" class="dropdown-menu dropdown-menu-right">
+          <a ngbDropdownItem routerLink="/step-list" (click)="$event.preventDefault()">List</a>
+          <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Settings</a>
+          <!-- <a ngbDropdownItem href="#" (click)="$event.preventDefault()">API</a> -->
+        </div>
+      </li>
+
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarmodulesdropdown" role="button">
           Modules
         </a>
-        <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
-          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">List</a>
-          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Settings</a>
-          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">API</a>
+        <div ngbDropdownMenu aria-labelledby="navbarmodulesdropdown" class="dropdown-menu dropdown-menu-right">
+          <a ngbDropdownItem routerLink="/module-list" (click)="$event.preventDefault()">List</a>
+          <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Settings</a>
+          <!-- <a ngbDropdownItem href="#" (click)="$event.preventDefault()">API</a> -->
+        </div>
+      </li>
+
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarepicsdropdown" role="button">
+          Epics
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarepicsdropdown" class="dropdown-menu dropdown-menu-right">
+          <a ngbDropdownItem routerLink="/epic-list" (click)="$event.preventDefault()">List</a>
+          <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Settings</a>
+          <!-- <a ngbDropdownItem href="#" (click)="$event.preventDefault()">API</a> -->
         </div>
       </li>
     </ul>
