@@ -2,6 +2,9 @@
   <span class="navbar-brand"><a routerLink="/" class="nav-link" tabindex="0" role="button">
     Shopfloor NG
   </a></span>
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" ngbDropdown>
@@ -10,7 +13,7 @@
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarstepsdropdown" class="dropdown-menu dropdown-menu-right">
           <a ngbDropdownItem routerLink="/step-list" (click)="$event.preventDefault()">List</a>
-          <a ngbDropdownItem routerLink="/settings?steps" (click)="$event.preventDefault()">Settings</a>
+          <a ngbDropdownItem routerLink="/settings/steps" (click)="$event.preventDefault()">Settings</a>
         </div>
       </li>
 
@@ -20,7 +23,7 @@
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarmodulesdropdown" class="dropdown-menu dropdown-menu-right">
           <a ngbDropdownItem routerLink="/module-list" (click)="$event.preventDefault()">List</a>
-          <a ngbDropdownItem routerLink="/settings?modules" (click)="$event.preventDefault()">Settings</a>
+          <a ngbDropdownItem routerLink="/settings/modules" (click)="$event.preventDefault()">Settings</a>
         </div>
       </li>
 
@@ -30,7 +33,7 @@
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarepicsdropdown" class="dropdown-menu dropdown-menu-right">
           <a ngbDropdownItem routerLink="/epic-list" (click)="$event.preventDefault()">List</a>
-          <a ngbDropdownItem routerLink="/settings?epics" (click)="$event.preventDefault()">Settings</a>
+          <a ngbDropdownItem routerLink="/settings/epics" (click)="$event.preventDefault()">Settings</a>
         </div>
       </li>
 

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'step', component: StepDetailComponent },
   { path: 'epic-list', component: EpicListComponent },
   { path: 'epic', component: EpicDetailComponent },
+  { path: 'settings/:type', component: SettingsComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'api-docs', component: ApiDocsComponent }
 ];
