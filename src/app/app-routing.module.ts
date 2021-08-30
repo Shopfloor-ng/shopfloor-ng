@@ -10,12 +10,12 @@ import { StepListComponent } from './step-list/step-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '/module-list', component: ModuleListComponent},
-  { path: '/module', component: ModuleDetailComponent},
-  { path: '/step-list', component: StepListComponent},
-  { path: '/step', component: StepDetailComponent},
-  { path: '/epic-list', component: EpicListComponent},
-  { path: '/epic', component: EpicDetailComponent}
+  { path: 'module-list', component: ModuleListComponent},
+  { path: 'module', component: ModuleDetailComponent},
+  { path: 'step-list', component: StepListComponent},
+  { path: 'step', component: StepDetailComponent},
+  { path: 'epic-list', component: EpicListComponent},
+  { path: 'epic', component: EpicDetailComponent}
 ];
 
 @NgModule({
