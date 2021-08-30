@@ -10,8 +10,7 @@
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarstepsdropdown" class="dropdown-menu dropdown-menu-right">
           <a ngbDropdownItem routerLink="/step-list" (click)="$event.preventDefault()">List</a>
-          <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Settings</a>
-          <!-- <a ngbDropdownItem href="#" (click)="$event.preventDefault()">API</a> -->
+          <a ngbDropdownItem routerLink="/settings?steps" (click)="$event.preventDefault()">Settings</a>
         </div>
       </li>
 
@@ -21,8 +20,7 @@
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarmodulesdropdown" class="dropdown-menu dropdown-menu-right">
           <a ngbDropdownItem routerLink="/module-list" (click)="$event.preventDefault()">List</a>
-          <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Settings</a>
-          <!-- <a ngbDropdownItem href="#" (click)="$event.preventDefault()">API</a> -->
+          <a ngbDropdownItem routerLink="/settings?modules" (click)="$event.preventDefault()">Settings</a>
         </div>
       </li>
 
@@ -32,12 +30,21 @@
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarepicsdropdown" class="dropdown-menu dropdown-menu-right">
           <a ngbDropdownItem routerLink="/epic-list" (click)="$event.preventDefault()">List</a>
-          <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">Settings</a>
-          <!-- <a ngbDropdownItem href="#" (click)="$event.preventDefault()">API</a> -->
+          <a ngbDropdownItem routerLink="/settings?epics" (click)="$event.preventDefault()">Settings</a>
+        </div>
+      </li>
+
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarmanagedropdown" role="button">
+          Manage
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarmanagedropdown" class="dropdown-menu dropdown-menu-right">
+          <a ngbDropdownItem routerLink="/settings" (click)="$event.preventDefault()">Settings</a>
+          <a ngbDropdownItem routerLink="/api-docs" (click)="$event.preventDefault()">API documentation</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
-<!-- The routed views render in the <router-outlet>-->
+
 <router-outlet></router-outlet>

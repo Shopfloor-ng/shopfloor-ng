@@ -12,6 +12,8 @@ import { StepListComponent } from './step-list/step-list.component';
 import { ModuleDetailComponent } from './module-detail/module-detail.component';
 import { StepDetailComponent } from './step-detail/step-detail.component';
 import { EpicDetailComponent } from './epic-detail/epic-detail.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ApiDocsComponent } from './api-docs/api-docs.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { EpicDetailComponent } from './epic-detail/epic-detail.component';
     StepListComponent,
     ModuleDetailComponent,
     StepDetailComponent,
-    EpicDetailComponent
+    EpicDetailComponent,
+    SettingsComponent,
+    ApiDocsComponent
   ],
   imports: [
     BrowserModule,
