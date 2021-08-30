@@ -10,7 +10,7 @@ Shopfloor-NG is supposed to be an open source implementation to help implement f
 
 Furthermore, open API endpoints will ensure interoperability with any other external system that can do REST calls.
 
-Opensource means that you will be able to also implement your own functions and APIs based on specific necesseties.
+Opensource means that you will be able to also implement your own functions and APIs based on specific necessities.
 
 ## Contribution
 
