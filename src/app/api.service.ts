@@ -1,7 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Step } from './model/step';
+import { HttpClient } from '@angular/common/http';
+import { Step, Steps } from './model/step';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -12,21 +13,29 @@ export class ApiService {
     }
 
     getStep(id?: string, number?: number, desc?: string): Observable<Step[]> {
+        // const httpParam = new HttpParams();
+        // id ? httpParam.set("_id", id) : undefined;
+        // number ? httpParam.set("number", number) : undefined;
+        // desc ? httpParam.set("description", desc) : undefined;
+
         let filter = "";
-        if(id!==undefined || number!==undefined || desc!==undefined){
+        if (id !== undefined || number !== undefined || desc !== undefined) {
             filter = "?";
         }
-        filter+=id?"_id="+id:"";
-        filter+=number?"number="+number:"";
-        filter+=desc?"description="+desc:"";
-        console.log('getStep ' + this.baseURL + 'step' + filter);
-        return this.http.get<Step[]>(this.baseURL + 'step' + filter);
+        filter += id ? "_id=" + id : "";
+        filter += number ? "number=" + number : "";
+        filter += desc ? "description=" + desc : "";
+        console.log('getStep ' + this.baseURL + 'step');
+        // console.log(httpParam)
+        return this.http.get<Steps>(this.baseURL + 'step' + filter).pipe(
+            map((res: Steps)=>res.data)
+        );
     }
 
     addStep(step: Step): Observable<any> {
-        const headers = { 'content-type': 'application/json' }
+        const headers = { 'content-type': 'application/json' };
         const body = JSON.stringify(step);
-        console.log(body)
+        console.log(body);
         return this.http.post(this.baseURL + 'step', body, { 'headers': headers })
     }
 

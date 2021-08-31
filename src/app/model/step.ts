@@ -1,3 +1,7 @@
+export interface Steps {
+    data: Step[];
+}
+
 export class Step {
     id: string = '';
     number: number = 0;

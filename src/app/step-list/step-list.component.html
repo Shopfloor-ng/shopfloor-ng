@@ -1,1 +1,16 @@
-<p>step-list works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Description</th>
+            <th scope="col">Module</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let step of steps">
+            <td>{{ step.number }}</td>
+            <td>{{ step.description }}</td>
+            <td>{{ step.module }}</td>
+        </tr>
+    </tbody>
+</table>
