@@ -1,3 +1,5 @@
+<center><img src='src/assets/logo.svg' width='100'></center>
+
 # Shopfloor-NG
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
