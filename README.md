@@ -15,7 +15,7 @@ Opensource means that you will be able to also implement your own functions and 
 ## Contribution
 
 Contributions in any way are welcome.
-Please contact @short-circuit for any questions.
+Please use the [Discussion](https://github.com/short-circuit/shopfloor-ng/discussions) for any questions.
 
 ## Development server
 
