@@ -15,6 +15,7 @@ import { StepDetailComponent } from './step-detail/step-detail.component';
 import { EpicDetailComponent } from './epic-detail/epic-detail.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ApiDocsComponent } from './api-docs/api-docs.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ApiDocsComponent } from './api-docs/api-docs.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
