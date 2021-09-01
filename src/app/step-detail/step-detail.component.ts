@@ -9,20 +9,25 @@ import { Step } from '../model/step';
 export class StepDetailComponent implements OnChanges {
 
   @Input() inputStep?: Step;
+  @Input() calledModal = false;
   step: Step = new Step();
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.inputStep!!) {
       console.log(this.inputStep);
-      this.loadStepFromId(this.inputStep);
+      this.loadStep(this.inputStep);
     }
   }
 
-  loadStepFromId(step: Step) {
+  loadStep(step: Step) {
     if (this.inputStep!!) {
-      this.step = this.inputStep;
+      this.step = { ...this.inputStep };
     }
+  }
+
+  newStep(){
+    this.step = new Step();
   }
 
 }

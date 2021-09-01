@@ -12,5 +12,5 @@
     <input class="form-control" type="link" name="media" id="inputMedia" placeholder="https://example.com/media/image.png">
     <p class="help-block">URL to media (image, video)</p>
   </div>
-  <button type="submit" class="btn btn-primary hidebtn">Save</button>
+  <button type="submit" [ngClass]="{'modal': calledModal}" class="btn btn-primary">Save</button>
 </form>
