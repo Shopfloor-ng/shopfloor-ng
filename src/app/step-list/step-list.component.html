@@ -4,7 +4,7 @@
         <label class="sr-only" for="searchtext">Search text</label>
         <input id="searchtext" type="text" class="form-control input-xlarge" ngModel #searchtext="ngModel"
             name="searchbox" placeholder="Filter..." [(ngModel)]="filter" />
-        <button class="btn" type="submit" name="searchbtn">
+        <button class="btn btn-default" type="submit" name="searchbtn">
             Search
         </button>
     </div>
@@ -19,10 +19,25 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let step of steps">
+        <tr *ngFor="let step of steps" (click)="editStep(step, content)">
             <td>{{ step.number }}</td>
             <td>{{ step.description }}</td>
             <td>{{ step.module }}</td>
         </tr>
     </tbody>
 </table>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Edit Step</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-step-detail [inputStep]="selectedStep"></app-step-detail>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    </div>
+</ng-template>

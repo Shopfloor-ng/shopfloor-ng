@@ -1,16 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from '../api.service';
 import { Step } from '../model/step';
 
 @Component({
   selector: 'app-step-list',
   templateUrl: './step-list.component.html',
-  styleUrls: ['./step-list.component.scss']
+  styleUrls: ['./step-list.component.scss'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class StepListComponent implements OnInit {
   filter: string | undefined;
   steps: Step[] = [];
-  constructor(private api: ApiService) { }
+  selectedStep?: Step;
+
+  constructor(private api: ApiService, config: NgbModalConfig, private modalService: NgbModal) {
+    // customize default values of modals used by this component tree
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
+
+  editStep(step: Step, content: any) {
+    this.selectedStep = step;
+    this.modalService.open(content);
+    console.log(step);
+  }
 
   EnterSubmit(event: { keyCode: number; }, form: any) {
     //keycode for Enter is 13 
