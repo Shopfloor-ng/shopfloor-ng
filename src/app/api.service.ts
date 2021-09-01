@@ -12,7 +12,7 @@ export class ApiService {
     constructor(private http: HttpClient) {
     }
 
-    getStep(id?: string, number?: number, desc?: string): Observable<Step[]> {
+    getStep(id?: string, number?: number, desc?: string, module?: string): Observable<Step[]> {
         // const httpParam = new HttpParams();
         // id ? httpParam.set("_id", id) : undefined;
         // number ? httpParam.set("number", number) : undefined;
@@ -25,6 +25,7 @@ export class ApiService {
         filter += id ? "_id=" + id : "";
         filter += number ? "number=" + number : "";
         filter += desc ? "description=" + desc : "";
+        filter += module ? "module=" + module : "";
         console.log('getStep ' + this.baseURL + 'step');
         // console.log(httpParam)
         return this.http.get<Steps>(this.baseURL + 'step' + filter).pipe(
