@@ -1,8 +1,13 @@
-<form (ngSubmit)="SubmitForm(searchform.form)" #searchform="ngForm" (keydown)="EnterSubmit($event, searchform.form)" name="searchformbox" >
-    <input type="text" class="form-control search" ngModel #searchtext="ngModel" name="searchbox" placeholder="Filter..." [(ngModel)]="filter" />
-    <button class="btn btn-primary" type="submit" name="searchbtn" >
-        Search
-    </button>
+<form (ngSubmit)="SubmitForm(searchform.form)" #searchform="ngForm" (keydown)="EnterSubmit($event, searchform.form)"
+    class="form-inline" name="searchformbox">
+    <div class="form-group">
+        <label class="sr-only" for="searchtext">Search text</label>
+        <input id="searchtext" type="text" class="form-control input-xlarge" ngModel #searchtext="ngModel"
+            name="searchbox" placeholder="Filter..." [(ngModel)]="filter" />
+        <button class="btn" type="submit" name="searchbtn">
+            Search
+        </button>
+    </div>
 </form>
 
 <table class="table table-striped">
