@@ -1,4 +1,4 @@
-<center><img src='src/assets/logo.svg' width='100'></center>
+<img src='src/assets/logo.svg' width='100'>
 
 # Shopfloor-NG
 
