@@ -12,14 +12,11 @@ export class ApiService {
     constructor(private http: HttpClient) {
     }
 
+    //#region Step
     getStep(id?: string, number?: number, desc?: string, module?: string): Observable<Step[]> {
-        // const httpParam = new HttpParams();
-        // id ? httpParam.set("_id", id) : undefined;
-        // number ? httpParam.set("number", number) : undefined;
-        // desc ? httpParam.set("description", desc) : undefined;
-
+        
         let filter = "";
-        if (id !== undefined || number !== undefined || desc !== undefined) {
+        if (id !== undefined || number !== undefined || desc !== undefined || module !== undefined) {
             filter = "?";
         }
         filter += id ? "_id=" + id : "";
@@ -39,5 +36,5 @@ export class ApiService {
         console.log(body);
         return this.http.post(this.baseURL + 'step', body, { 'headers': headers })
     }
-
+    //#endregion
 }
