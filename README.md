@@ -2,6 +2,15 @@
 
 # Shopfloor-NG
 
+## Table of contents
+
+  - [Info](#info)
+  - [What it does](#what-it-does)
+  - [Contribution](#contribution)
+  - [Development server](#development-server)
+
+## Info
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
 Please note that this software is still under heavy development. **Nothing** is expected to work.
