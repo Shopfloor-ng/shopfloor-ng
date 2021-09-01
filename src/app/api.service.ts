@@ -14,7 +14,6 @@ export class ApiService {
 
     //#region Step
     getStep(id?: string, number?: number, desc?: string, module?: string): Observable<Step[]> {
-        
         let filter = "";
         if (id !== undefined || number !== undefined || desc !== undefined || module !== undefined) {
             filter = "?";
@@ -26,7 +25,7 @@ export class ApiService {
         console.log('getStep ' + this.baseURL + 'step');
         // console.log(httpParam)
         return this.http.get<Steps>(this.baseURL + 'step' + filter).pipe(
-            map((res: Steps)=>res.data)
+            map((res: Steps) => res.data)
         );
     }
 
