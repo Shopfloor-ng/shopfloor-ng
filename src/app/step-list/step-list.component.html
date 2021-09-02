@@ -13,7 +13,11 @@
     </button>
 </form>
 
+
 <table class="table table-striped lower">
+  <div id="overlay" *ngIf="loadingTable">
+      <span id="loadtext"> <i class="fa fa-refresh fa-spin" aria-hidden="true"></i> Loading...</span>
+  </div>
     <thead>
         <tr>
             <th scope="col">Number</th>
@@ -21,7 +25,7 @@
             <th scope="col">Module</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody  *ngIf="!loadingTable">
         <tr *ngFor="let step of steps" (click)="editStep(step, content)">
             <td>{{ step.number }}</td>
             <td>{{ step.description }}</td>
@@ -41,7 +45,8 @@
         <app-step-detail [inputStep]="selectedStep" [calledModal]="true"></app-step-detail>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="c('Save click')">Save</button>
+        <button type="button" class="btn btn-primary" (click)="saveStep(selectedStep);c('Save click')">Save</button>
         <button type="button" class="btn btn-secondary" (click)="d('Close click')">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="deleteStep(selectedStep);c('Delete click')">Delete</button>
     </div>
 </ng-template>

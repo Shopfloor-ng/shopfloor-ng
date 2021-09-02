@@ -3,7 +3,7 @@ export interface Steps {
 }
 
 export class Step {
-    id: string = '';
+    _id: string = '';
     number: number = 0;
     description: string = '';
     previousStep: string = '';

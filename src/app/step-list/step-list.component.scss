@@ -5,3 +5,20 @@
 .lower {
     margin-top: 25px;
 }
+
+.overlay {
+    position: relative;
+    font-size: 50px;
+    // color: white;
+    width: 100%;
+}
+
+#loadtext { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}

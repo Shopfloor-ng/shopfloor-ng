@@ -14,6 +14,7 @@ export class StepListComponent implements OnInit {
   steps: Step[] = [];
   selectedStep?: Step;
   modalText = "New Step";
+  loadingTable=false;
 
   constructor(private api: ApiService, config: NgbModalConfig, private modalService: NgbModal) {
     // customize default values of modals used by this component tree
@@ -33,6 +34,23 @@ export class StepListComponent implements OnInit {
     this.modalService.open(content);
   }
 
+  saveStep(step?: Step) {
+    if(this.selectedStep!!) {
+      const apires = this.api.saveStep(this.selectedStep);
+      console.log(apires);
+      this.refreshSteps();
+    }
+  }
+
+  deleteStep(step?: Step) {
+    if(this.selectedStep!!) {
+      const apires = this.api.deleteStep(this.selectedStep._id);
+      console.log(apires);
+      this.refreshSteps();
+    }
+  }
+
+
   EnterSubmit(event: { keyCode: number; }, form: any) {
     //keycode for Enter is 13 
     if (event.keyCode === 13) {
@@ -48,10 +66,12 @@ export class StepListComponent implements OnInit {
 
   refreshSteps() {
     // console.log(this.filter);
+    this.loadingTable=true;
     this.api.getStep(undefined, undefined, this.filter)
       .subscribe(data => {
         // console.log(data)
         this.steps = data;
+        this.loadingTable=false;
       })
   }
 

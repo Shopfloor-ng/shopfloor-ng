@@ -15,7 +15,7 @@ export class ApiService {
     //#region Step
     getStep(id?: string, number?: number, desc?: string, module?: string): Observable<Step[]> {
         let filter = "";
-        if (id !== undefined || number !== undefined || desc !== undefined || module !== undefined) {
+        if (id!! || number!! || desc!! || module!!) {
             filter = "?";
         }
         filter += id ? "_id=" + id : "";
@@ -29,11 +29,25 @@ export class ApiService {
         );
     }
 
-    addStep(step: Step): Observable<any> {
+    saveStep(step: Step): Observable<Step> {
         const headers = { 'content-type': 'application/json' };
         const body = JSON.stringify(step);
         console.log(body);
-        return this.http.post(this.baseURL + 'step', body, { 'headers': headers })
+        return this.http.post<Step>(this.baseURL + 'step', body, { 'headers': headers }).pipe(
+            map((res: Step) => res)
+        );
+    }
+
+    deleteStep(id: string): Observable<Step> {
+        let filter = "";
+        if (id) {
+            filter = "?";
+        }
+        filter += id ? "_id=" + id : "";
+        console.log('deleteStep ' + this.baseURL + 'step');
+        return this.http.delete<Step>(this.baseURL + 'step' + filter).pipe(
+            map((res: Step) => res)
+        );
     }
     //#endregion
 }
