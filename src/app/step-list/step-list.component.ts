@@ -13,6 +13,7 @@ export class StepListComponent implements OnInit {
   filter: string | undefined;
   steps: Step[] = [];
   selectedStep?: Step;
+  modalText = "New Step";
 
   constructor(private api: ApiService, config: NgbModalConfig, private modalService: NgbModal) {
     // customize default values of modals used by this component tree
@@ -22,11 +23,13 @@ export class StepListComponent implements OnInit {
 
   editStep(step: Step, content: any) {
     this.selectedStep = step;
+    this.modalText = "Edit Step";
     this.modalService.open(content);
   }
 
   newStep(content: any) {
     this.selectedStep = new Step();
+    this.modalText = "New Step";
     this.modalService.open(content);
   }
 
