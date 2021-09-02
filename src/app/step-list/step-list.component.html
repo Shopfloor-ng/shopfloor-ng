@@ -2,15 +2,18 @@
     class="form-inline" name="searchformbox">
     <div class="form-group">
         <label class="sr-only" for="searchtext">Search text</label>
-        <input id="searchtext" type="text" class="form-control input-xlarge" ngModel #searchtext="ngModel"
-            name="searchbox" placeholder="Filter..." [(ngModel)]="filter" />
-        <button class="btn btn-default" type="submit" name="searchbtn">
+        <input id="searchtext" type="text" class="form-control margin" ngModel #searchtext="ngModel" name="searchbox"
+            placeholder="Filter..." [(ngModel)]="filter" />
+        <button class="btn btn-outline-dark margin" type="submit" name="searchbtn" id="searchbtn">
             Search
         </button>
     </div>
+    <button (click)="newStep(content)" type="button" class="ml-auto btn btn-success margin" name="newbtn" id="newbtn">
+        &plus; Add
+    </button>
 </form>
 
-<table class="table table-striped">
+<table class="table table-striped lower">
     <thead>
         <tr>
             <th scope="col">Number</th>

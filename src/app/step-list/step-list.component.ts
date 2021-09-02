@@ -23,7 +23,11 @@ export class StepListComponent implements OnInit {
   editStep(step: Step, content: any) {
     this.selectedStep = step;
     this.modalService.open(content);
-    console.log(step);
+  }
+
+  newStep(content: any) {
+    this.selectedStep = new Step();
+    this.modalService.open(content);
   }
 
   EnterSubmit(event: { keyCode: number; }, form: any) {

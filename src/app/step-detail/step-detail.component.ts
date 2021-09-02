@@ -25,10 +25,4 @@ export class StepDetailComponent implements OnChanges {
       this.step = { ...this.inputStep };
     }
   }
-
-  newStep(){
-    this.step = new Step();
-  }
-
 }
-

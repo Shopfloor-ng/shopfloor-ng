@@ -1,8 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
   <span class="navbar-brand"><a routerLink="/" class="nav-link" tabindex="0" role="button">
-    Shopfloor NG
-  </a></span>
-  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+      Shopfloor NG
+    </a></span>
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed"
+    aria-label="Toggle navigation" (click)="collapsed = !collapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
@@ -49,8 +50,8 @@
     </ul>
   </div>
 </nav>
+<br />
 
-<div class="container">
-  <br/>
+<div class="container-xl">
   <router-outlet></router-outlet>
 </div>
