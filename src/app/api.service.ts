@@ -38,16 +38,14 @@ export class ApiService {
         );
     }
 
-    deleteStep(id: string): Observable<Step> {
+    deleteStep(id: string): Observable<Object> {
         let filter = "";
         if (id) {
             filter = "?";
         }
         filter += id ? "_id=" + id : "";
-        console.log('deleteStep ' + this.baseURL + 'step');
-        return this.http.delete<Step>(this.baseURL + 'step' + filter).pipe(
-            map((res: Step) => res)
-        );
+        console.log('deleteStep ' + this.baseURL + 'step' + filter);
+        return this.http.delete(this.baseURL + 'step' + filter);
     }
     //#endregion
 }
