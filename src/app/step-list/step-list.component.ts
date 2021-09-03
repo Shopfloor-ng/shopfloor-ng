@@ -34,22 +34,6 @@ export class StepListComponent implements OnInit {
     this.modalService.open(content);
   }
 
-  saveStep(step?: Step) {
-    if(this.selectedStep!!) {
-      const apires = this.api.saveStep(this.selectedStep);
-      console.log(apires);
-      this.refreshSteps();
-    }
-  }
-
-  deleteStep(step?: Step) {
-    if(this.selectedStep!!) {
-      const apires = this.api.deleteStep(this.selectedStep._id);
-      console.log(apires);
-      this.refreshSteps();
-    }
-  }
-
 
   EnterSubmit(event: { keyCode: number; }, form: any) {
     //keycode for Enter is 13 

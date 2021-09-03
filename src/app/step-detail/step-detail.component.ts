@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ApiService } from '../api.service';
 import { Step } from '../model/step';
 
 @Component({
@@ -11,7 +12,7 @@ export class StepDetailComponent implements OnChanges {
   @Input() inputStep?: Step;
   @Input() calledModal = false;
   step: Step = new Step();
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.inputStep!!) {
@@ -23,6 +24,20 @@ export class StepDetailComponent implements OnChanges {
   loadStep(step: Step) {
     if (this.inputStep!!) {
       this.step = { ...this.inputStep };
+    }
+  }
+
+  saveStep() {
+    if(this.step!!) {
+      const apires = this.api.saveStep(this.step);
+      console.log(apires);
+    }
+  }
+
+  deleteStep() {
+    if(this.step!!) {
+      const apires = this.api.deleteStep(this.step._id);
+      console.log(apires);
     }
   }
 }

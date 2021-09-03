@@ -42,11 +42,11 @@
         </button>
     </div>
     <div class="modal-body">
-        <app-step-detail [inputStep]="selectedStep" [calledModal]="true"></app-step-detail>
+        <app-step-detail #stepdetail [inputStep]="selectedStep" [calledModal]="true"></app-step-detail>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="saveStep(selectedStep);c('Save click')">Save</button>
-        <button type="button" class="btn btn-secondary" (click)="d('Close click')">Cancel</button>
-        <button type="button" class="btn btn-danger" (click)="deleteStep(selectedStep);c('Delete click')">Delete</button>
+        <button type="button" class="btn btn-primary" (click)="stepdetail.saveStep();c('Save click');refreshSteps()">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="d('Close click');refreshSteps()">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="stepdetail.deleteStep();c('Delete click');refreshSteps()">Delete</button>
     </div>
 </ng-template>
